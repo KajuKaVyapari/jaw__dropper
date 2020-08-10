@@ -1,7 +1,7 @@
 extends Spatial
 
 
-onready var obstacle = load("res://scenes/obstacle.tscn")
+onready var obstacle = preload("res://scenes/obstacle.tscn")
 var obstacles = []
 var i = 0
 
