@@ -7,5 +7,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -66.3473, 0 )
 script = ExtResource( 1 )
 
 [node name="obstacle_timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="self_spawn_timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="increase_speed_timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 [connection signal="timeout" from="obstacle_timer" to="." method="_on_obstacle_timer_timeout"]
+[connection signal="timeout" from="self_spawn_timer" to="." method="_on_self_spawn_timer_timeout"]
+[connection signal="timeout" from="increase_speed_timer" to="." method="_on_increase_speed_timer_timeout"]
