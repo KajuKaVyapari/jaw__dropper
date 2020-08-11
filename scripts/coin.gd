@@ -9,8 +9,8 @@ var velocity = Vector3()
 
 func _physics_process(delta: float) -> void:
 	
-	speed = global.speed
-	acceleration = global.acceleration
+	speed = global.speed * 0.6
+	acceleration = global.acceleration * 0.6
 	velocity = velocity.linear_interpolate(direction * speed, acceleration)
 	velocity = move_and_slide(velocity * delta)
 	if transform.origin.y >= 30:
