@@ -19,4 +19,12 @@ func _physics_process(delta: float) -> void:
 func _on_coin_area_body_entered(body: Node) -> void:
 	if body.name == "player":
 		global.score += 1
+		body.get_node("player_animator").play("rotate")
+		var t = Timer.new()
+		t.set_wait_time(.25)
+		t.set_one_shot(true)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
 		queue_free()
+		t.queue_free()
