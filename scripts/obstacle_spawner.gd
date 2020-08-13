@@ -5,6 +5,7 @@ onready var obstacle = load("res://scenes/obstacle.tscn")
 onready var spawner = load("res://scenes/obstacle_spawner.tscn")
 var obstacles = []
 var i = 0
+var local_translate
 
 
 func _ready() -> void:
@@ -15,11 +16,13 @@ func _on_obstacle_timer_timeout() -> void:
 	obstacles.push_back(obstacle.instance())
 	obstacles[i].name = "obstacle_" + str(i)
 	obstacles[i].rotate_y(deg2rad(randi() % 181))
-	obstacles[i].transform.origin.y = get_parent().transform.origin.y + randi() % 10 - randi() % 20
-	obstacles[i].transform.origin.x  += clamp(randi() % 4 - randi() % 8, -4, 4)
+	obstacles[i].transform.origin.y = get_parent().transform.origin.y + randi() % 10 - randi() % 20 
+	local_translate = Vector3(clamp(randi() % 4 - randi() % 8, -4, 4),0, 0)
+	translate(get_transform().basis.xform(local_translate))
+	local_translate = Vector3(0 , clamp(randi() % 4 - randi() % 8, -4, 4), 0)
+	translate(get_transform().basis.xform(local_translate))
 	obstacles[i].transform.origin.z  += clamp(randi() % 4 - randi() % 8, -4, 4)
 	get_parent().get_parent().add_child(obstacles[i])
-#	obstacles[i]
 	i += 1
 
 
