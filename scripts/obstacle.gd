@@ -1,9 +1,11 @@
 extends KinematicBody
 
+
 var speed = global.speed
 var acceleration = global.acceleration
 var direction = Vector3.UP
 var velocity = Vector3()
+
 
 func _physics_process(delta: float) -> void:
 	speed = global.speed
