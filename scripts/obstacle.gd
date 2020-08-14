@@ -18,9 +18,13 @@ func _physics_process(delta: float) -> void:
 
 func _on_obstacle_area_body_entered(body: Node) -> void:
 	if body.name == "player":
-		body.queue_free() # Replace with lose_game()
+		lose_game()
 
 
 func _on_obstacle_area_area_entered(area: Area) -> void:
 	if area.name == "obstacle.area":
 		area.get_parent().queue_free()
+
+
+func lose_game():
+	get_tree().change_scene("res://scenes/ui/lose_screen.tscn")

@@ -11,6 +11,11 @@ var state = "move"
 onready var original_y = transform.origin.y
 
 
+func _ready() -> void:
+	
+	global.highscore = global.get_highscore()
+
+
 func _physics_process(delta: float) -> void:
 	
 	if state == "move":
@@ -24,7 +29,13 @@ func _physics_process(delta: float) -> void:
 			direction += Vector3.RIGHT
 		if Input.is_action_pressed("ui_left"):
 			direction += Vector3.LEFT
+		if Input.is_action_just_pressed("ui_cancel"):
+			pause_game()
 		direction = direction.normalized()
 		
 		velocity = velocity.linear_interpolate(direction * speed, acceleration)
 		velocity = move_and_slide(velocity * delta)
+
+
+func pause_game():
+	get_tree().paused = true
