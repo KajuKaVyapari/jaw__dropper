@@ -1,8 +1,8 @@
 extends Node
 
 
-var speed = 100
-var acceleration = 20
+var speed = 150
+var acceleration = 35
 var score = 0 setget set_score, get_score
 var spawners = 0
 var spawners_instances = []

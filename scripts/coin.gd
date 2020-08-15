@@ -21,7 +21,7 @@ func _on_coin_area_body_entered(body: Node) -> void:
 		global.score += 1
 		body.get_node("player_animator").play("rotate")
 		var t = Timer.new()
-		t.set_wait_time(.25)
+		t.set_wait_time(.1)
 		t.set_one_shot(true)
 		self.add_child(t)
 		t.start()

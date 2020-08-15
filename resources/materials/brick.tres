@@ -1,8 +1,10 @@
 [gd_resource type="SpatialMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://textures/marble.jpg" type="Texture" id=1]
+[sub_resource type="StreamTexture" id=1]
+flags = 23
+load_path = "res://.import/forest.jpg-497c66920ca3c3b8689a3ca6277b1f77.s3tc.stex"
 
 [resource]
-albedo_texture = ExtResource( 1 )
-uv1_scale = Vector3( 1, 2, 0 )
+albedo_texture = SubResource( 1 )
+uv1_scale = Vector3( 2, 2, 0 )
 uv2_scale = Vector3( 0, 0, 0 )
