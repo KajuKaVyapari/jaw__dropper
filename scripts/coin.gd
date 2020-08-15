@@ -28,3 +28,5 @@ func _on_coin_area_body_entered(body: Node) -> void:
 		yield(t, "timeout")
 		queue_free()
 		t.queue_free()
+	elif body.get_parent().name == "dropper":
+		queue_free()
