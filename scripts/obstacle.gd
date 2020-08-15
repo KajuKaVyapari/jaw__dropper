@@ -27,4 +27,4 @@ func _on_obstacle_area_area_entered(area: Area) -> void:
 
 
 func lose_game():
-	get_tree().change_scene("res://scenes/ui/lose_screen.tscn")
+	scene_changer.change_scene("res://scenes/ui/lose_screen.tscn")

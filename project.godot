@@ -22,6 +22,8 @@ config/icon="res://icon.png"
 [autoload]
 
 global="*res://scripts/global.gd"
+scene_changer="*res://scenes/scene_changer.tscn"
+soundtrack="*res://scenes/soundtrack.tscn"
 
 [display]
 

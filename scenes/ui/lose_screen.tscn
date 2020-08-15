@@ -71,6 +71,14 @@ scene = "res://scenes/world.tscn"
 
 [node name="quit_button" parent="." instance=ExtResource( 6 )]
 margin_left = 800.935
-margin_top = 786.0
+margin_top = 908.0
 margin_right = 1110.94
-margin_bottom = 910.0
+margin_bottom = 1032.0
+
+[node name="base_button2" parent="." instance=ExtResource( 5 )]
+margin_left = 800.0
+margin_top = 758.0
+margin_right = -810.0
+margin_bottom = -198.0
+text = "Main Menu"
+scene = "res://scenes/ui/main_menu.tscn"

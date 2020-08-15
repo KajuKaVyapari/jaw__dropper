@@ -34,6 +34,6 @@ scene = "res://scenes/world.tscn"
 
 [node name="quit_button" parent="." instance=ExtResource( 3 )]
 margin_left = 822.0
-margin_top = 786.0
+margin_top = 808.0
 margin_right = 1132.0
-margin_bottom = 910.0
+margin_bottom = 932.0

@@ -30,12 +30,8 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("ui_left"):
 			direction += Vector3.LEFT
 		if Input.is_action_just_pressed("ui_cancel"):
-			pause_game()
+			get_parent().get_node("pause_manager").pause_game()
 		direction = direction.normalized()
 		
 		velocity = velocity.linear_interpolate(direction * speed, acceleration)
 		velocity = move_and_slide(velocity * delta)
-
-
-func pause_game():
-	get_tree().paused = true
