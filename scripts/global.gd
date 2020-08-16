@@ -82,9 +82,9 @@ func lose_game():
 func set_music(value):
 	music = value
 	if music:
-		get_node("/root/soundtrack").play()
+		get_node("/root/soundtrack").stream_paused = false
 	else:
-		get_node("/root/soundtrack").stop()
+		get_node("/root/soundtrack").stream_paused = true
 
 
 func get_music():

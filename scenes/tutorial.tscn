@@ -87,9 +87,9 @@ __meta__ = {
 }
 
 [node name="return_button" parent="." instance=ExtResource( 4 )]
-margin_left = 1519.81
-margin_top = 922.664
-margin_right = -90.1866
-margin_bottom = -33.3363
+margin_left = 1520.0
+margin_top = 925.0
+margin_right = -89.9999
+margin_bottom = -30.9999
 text = "Return"
 scene = "res://scenes/ui/main_menu.tscn"
