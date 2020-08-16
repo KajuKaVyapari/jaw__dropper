@@ -55,7 +55,7 @@ anims/rotate = SubResource( 2 )
 
 [node name="chew_effect" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 3 )
-unit_db = 15.0
+unit_db = 30.0
 pitch_scale = 0.8
 
 [node name="destroy_particle" type="Particles" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/ui/title_label.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/base_button.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://resources/settings_button.tres" type="StyleBox" id=6]
 [ext_resource path="res://scripts/ui/music_button.gd" type="Script" id=7]
 [ext_resource path="res://scripts/ui/controls_button.gd" type="Script" id=8]
+[ext_resource path="res://scripts/ui/difficulty_button.gd" type="Script" id=9]
+[ext_resource path="res://resources/settings_button_theme.tres" type="Theme" id=10]
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
@@ -53,7 +55,11 @@ custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/normal = ExtResource( 6 )
 custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 pressed = true
 text = "Music "
 script = ExtResource( 7 )
@@ -62,17 +68,58 @@ __meta__ = {
 }
 
 [node name="controls_button" type="OptionButton" parent="."]
-margin_left = 1500.0
-margin_top = 600.0
-margin_right = 1667.0
-margin_bottom = 621.0
+margin_left = 299.056
+margin_top = 500.0
+margin_right = 466.056
+margin_bottom = 564.0
+theme = ExtResource( 10 )
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/normal = ExtResource( 6 )
-custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="controls_label" type="Label" parent="controls_button"]
+margin_left = -190.0
+margin_right = -10.0
+margin_bottom = 64.0
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Controls: "
+
+[node name="difficulty_button" type="OptionButton" parent="."]
+margin_left = 300.0
+margin_top = 599.056
+margin_right = 467.0
+margin_bottom = 663.056
+theme = ExtResource( 10 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="difficulty_label" type="Label" parent="difficulty_button"]
+margin_left = -190.0
+margin_right = -10.0
+margin_bottom = 64.0
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Difficulty:"
 [connection signal="toggled" from="music_button" to="music_button" method="_on_music_button_toggled"]
 [connection signal="item_selected" from="controls_button" to="controls_button" method="_on_controls_button_item_selected"]
+[connection signal="item_selected" from="difficulty_button" to="difficulty_button" method="_on_difficulty_button_item_selected"]

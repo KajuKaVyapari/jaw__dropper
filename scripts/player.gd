@@ -37,6 +37,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	print(global.control_type)
 	if event is InputEventMouseMotion and global.control_type == "mouse":
 			direction = Vector3(event.get_relative().x, 0, event.get_relative().y).normalized()

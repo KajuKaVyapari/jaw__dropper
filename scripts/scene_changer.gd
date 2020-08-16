@@ -4,6 +4,7 @@ onready var animator = $animator
 
 
 func change_scene(path, delay = 0):
+	global.update_difficulty()
 	yield(get_tree().create_timer(delay), "timeout")
 	animator.play("scene_change")
 	yield(animator, "animation_finished")
