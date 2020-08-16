@@ -1,6 +1,5 @@
 extends KinematicBody
 
-
 export var speed = 80
 export var acceleration = 15
 
@@ -12,12 +11,10 @@ onready var original_y = transform.origin.y
 
 
 func _ready() -> void:
-	
 	global.highscore = global.get_highscore()
 
 
 func _physics_process(delta: float) -> void:
-	
 	if state == "move":
 		transform.origin.y = original_y
 		direction = Vector3()
@@ -32,6 +29,6 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_cancel"):
 			get_parent().get_node("pause_manager").pause_game()
 		direction = direction.normalized()
-		
+
 		velocity = velocity.linear_interpolate(direction * speed, acceleration)
 		velocity = move_and_slide(velocity * delta)

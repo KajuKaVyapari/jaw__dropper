@@ -1,6 +1,5 @@
 extends KinematicBody
 
-
 var speed = global.speed
 var acceleration = global.acceleration
 var direction = Vector3.UP
@@ -18,13 +17,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_obstacle_area_body_entered(body: Node) -> void:
 	if body.name == "player":
-		lose_game()
+		global.lose_game()
 
 
 func _on_obstacle_area_area_entered(area: Area) -> void:
 	if area.name == "obstacle.area":
 		area.get_parent().queue_free()
-
-
-func lose_game():
-	scene_changer.change_scene("res://scenes/ui/lose_screen.tscn")

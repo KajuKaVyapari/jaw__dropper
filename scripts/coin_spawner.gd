@@ -1,11 +1,9 @@
 extends Spatial
 
-
 onready var coin = preload("res://scenes/coin.tscn")
 var spawner = load("res://scenes/coin_spawner.tscn")
-var i =0
+var i = 0
 var coins = []
-
 
 
 func _on_coin_timer_timeout() -> void:

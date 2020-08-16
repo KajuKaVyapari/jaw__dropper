@@ -1,11 +1,6 @@
 extends Spatial
 
-onready var buttons = [
-	$resume_button,
-	$retry_button,
-	$quit_button,
-	$menu_button
-]
+onready var buttons = [$resume_button, $retry_button, $quit_button, $menu_button]
 
 var is_cooldown = false
 
@@ -18,7 +13,10 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if get_parent().get_node("player").state == "wait" and Input.is_action_just_pressed("ui_cancel"):
+	if (
+		get_parent().get_node("player").state == "wait"
+		and Input.is_action_just_pressed("ui_cancel")
+	):
 		resume_game()
 
 

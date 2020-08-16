@@ -1,6 +1,5 @@
 extends Node
 
-
 var speed = 150
 var acceleration = 35
 var score = 0 setget set_score, get_score
@@ -24,6 +23,7 @@ func load_score():
 		var content = f.get_as_text()
 		highscore = int(content)
 		f.close()
+
 
 func save_score():
 	var f = File.new()
@@ -51,3 +51,10 @@ func set_highscore(value):
 
 func get_highscore():
 	return highscore
+
+
+func lose_game():
+	get_tree().get_root().get_node("world/player").get_node("destroy_particle").emitting = true
+	get_tree().get_root().get_node("world/player").get_node("mouth").hide()
+	yield(get_tree().create_timer(1), "timeout")
+	scene_changer.change_scene("res://scenes/ui/lose_screen.tscn")

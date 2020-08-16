@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/mouth.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sound/chew_effect.wav" type="AudioStream" id=3]
 
 [sub_resource type="SphereShape" id=1]
 radius = 2.0
@@ -22,6 +23,21 @@ tracks/0/keys = {
 "values": [ Vector3( -12.999, 0, 0 ), Vector3( 24, 0, 0 ), Vector3( -12.999, 0, 0 ) ]
 }
 
+[sub_resource type="ParticlesMaterial" id=3]
+flag_align_y = true
+flag_rotate_y = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.839216, 0.294118, 0.294118, 1 )
+
+[sub_resource type="PrismMesh" id=5]
+material = SubResource( 4 )
+size = Vector3( 0.5, 0.5, 0.5 )
+
 [node name="player" type="KinematicBody"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 script = ExtResource( 1 )
@@ -37,5 +53,20 @@ transform = Transform( 1, 0, 0, 0, 0.974374, 0.224934, 0, -0.224934, 0.974374, 0
 
 [node name="player_animator" type="AnimationPlayer" parent="."]
 anims/rotate = SubResource( 2 )
+
+[node name="chew_effect" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_db = 15.0
+pitch_scale = 0.8
+
+[node name="destroy_particle" type="Particles" parent="."]
+emitting = false
+amount = 16
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+visibility_aabb = AABB( -2, -2, -2, 4, 4, 4 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 5 )
 
 [editable path="mouth"]

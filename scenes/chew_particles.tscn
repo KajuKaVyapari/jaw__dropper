@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/chew_particles.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.2 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+lifetime_randomness = 0.5
+trail_size_modifier = SubResource( 2 )
+flag_align_y = true
+flag_rotate_y = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+flatness = 0.9
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+angle = -16.7
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.00784314, 0.486275, 0.184314, 1 )
+
+[sub_resource type="PrismMesh" id=4]
+material = SubResource( 6 )
+size = Vector3( 0.5, 0.5, 0 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.396078, 0.882353, 0.47451, 1 )
+
+[sub_resource type="PrismMesh" id=5]
+material = SubResource( 7 )
+size = Vector3( 0.5, 0.5, 0 )
+
+[node name="chew_particles" type="Particles"]
+emitting = false
+amount = 15
+lifetime = 2.0
+one_shot = true
+speed_scale = 6.0
+explosiveness = 0.75
+visibility_aabb = AABB( -4, -0.167851, -4, 8, 0.335703, 8 )
+process_material = SubResource( 3 )
+draw_passes = 2
+draw_pass_1 = SubResource( 4 )
+draw_pass_2 = SubResource( 5 )
+script = ExtResource( 1 )
