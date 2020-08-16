@@ -1,7 +1,7 @@
 extends Node
 
-var speed = 150
-var acceleration = 35
+var speed = 100
+var acceleration = 20
 var score = 0 setget set_score, get_score
 var spawners = 0
 var spawners_instances = []
@@ -10,6 +10,13 @@ var coins = 0
 
 var score_file = "user://highscore.txt"
 var highscore = 0 setget set_highscore, get_highscore
+
+# Settings
+var music = true setget set_music, get_music
+
+var control_dict = ["keyboard", "mouse"]
+var control_type = control_dict[0]
+
 
 
 func _ready() -> void:
@@ -59,3 +66,15 @@ func lose_game():
 	get_tree().get_root().get_node("world/player").get_node("player_collider").disabled = true
 	yield(get_tree().create_timer(1), "timeout")
 	scene_changer.change_scene("res://scenes/ui/lose_screen.tscn")
+
+
+func set_music(value):
+	music = value
+	if music:
+		get_node("/root/soundtrack").play()
+	else:
+		get_node("/root/soundtrack").stop()
+
+
+func get_music():
+	return music

@@ -13,5 +13,7 @@ func change_scene(path, delay = 0):
 
 	if "world" in path:
 		get_tree().get_root().get_node("/root/soundtrack").playing = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif not get_tree().get_root().get_node("/root/soundtrack").playing:
 		get_tree().get_root().get_node("/root/soundtrack").playing = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/ui/title_label.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/ui/base_button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/quit_button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/background.tres" type="Texture" id=4]
+[ext_resource path="res://resources/fonts/settings_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://resources/settings_button.tres" type="StyleBox" id=6]
+[ext_resource path="res://scripts/ui/music_button.gd" type="Script" id=7]
+[ext_resource path="res://scripts/ui/controls_button.gd" type="Script" id=8]
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
@@ -15,7 +19,9 @@ __meta__ = {
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.05945
 margin_top = -1.5874
+margin_right = 1.05945
 margin_bottom = -1.5874
 texture = ExtResource( 4 )
 expand = true
@@ -37,3 +43,36 @@ margin_left = 822.0
 margin_top = 808.0
 margin_right = 1132.0
 margin_bottom = 932.0
+
+[node name="music_button" type="CheckButton" parent="."]
+margin_left = 1500.0
+margin_top = 500.0
+margin_right = 1667.0
+margin_bottom = 564.0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+pressed = true
+text = "Music "
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controls_button" type="OptionButton" parent="."]
+margin_left = 1500.0
+margin_top = 600.0
+margin_right = 1667.0
+margin_bottom = 621.0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 5 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="toggled" from="music_button" to="music_button" method="_on_music_button_toggled"]
+[connection signal="item_selected" from="controls_button" to="controls_button" method="_on_controls_button_item_selected"]

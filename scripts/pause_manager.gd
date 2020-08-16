@@ -22,6 +22,7 @@ func _physics_process(_delta: float) -> void:
 
 func pause_game():
 	if not is_cooldown:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_parent().get_node("player").state = "wait"
 		get_tree().paused = true
 		$pause_label.visible = true
@@ -31,6 +32,7 @@ func pause_game():
 
 
 func resume_game():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_parent().get_node("player").state = "move"
 	get_tree().paused = false
 	is_cooldown = true
