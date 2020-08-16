@@ -32,7 +32,7 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 5.0
 
 [sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.839216, 0.294118, 0.294118, 1 )
+albedo_color = Color( 0.905882, 0.372549, 0.384314, 1 )
 
 [sub_resource type="PrismMesh" id=5]
 material = SubResource( 4 )
@@ -61,7 +61,7 @@ pitch_scale = 0.8
 
 [node name="destroy_particle" type="Particles" parent="."]
 emitting = false
-amount = 16
+amount = 60
 one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0

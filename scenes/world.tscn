@@ -169,7 +169,7 @@ __meta__ = {
 
 [node name="light" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.3899, 0 )
-omni_range = 19.7023
+omni_range = 30.0
 [connection signal="timeout" from="pause_manager/pause_timer" to="pause_manager" method="_on_pause_timer_timeout"]
 [connection signal="pressed" from="pause_manager/resume_button" to="pause_manager" method="resume_game"]
 [connection signal="pressed" from="pause_manager/retry_button" to="pause_manager/retry_button" method="_on_retry_button_pressed"]

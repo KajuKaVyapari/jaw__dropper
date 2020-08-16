@@ -36,10 +36,10 @@ size = Vector3( 0.5, 0.5, 0 )
 
 [node name="chew_particles" type="Particles"]
 emitting = false
-amount = 15
+amount = 30
 lifetime = 2.0
 one_shot = true
-speed_scale = 6.0
+speed_scale = 4.0
 explosiveness = 0.75
 visibility_aabb = AABB( -4, -0.167851, -4, 8, 0.335703, 8 )
 process_material = SubResource( 3 )

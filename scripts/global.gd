@@ -56,5 +56,6 @@ func get_highscore():
 func lose_game():
 	get_tree().get_root().get_node("world/player").get_node("destroy_particle").emitting = true
 	get_tree().get_root().get_node("world/player").get_node("mouth").hide()
+	get_tree().get_root().get_node("world/player").get_node("player_collider").disabled = true
 	yield(get_tree().create_timer(1), "timeout")
 	scene_changer.change_scene("res://scenes/ui/lose_screen.tscn")
