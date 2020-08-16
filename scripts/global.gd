@@ -23,7 +23,6 @@ var difficulty_type = difficulty_list[0] setget set_difficulty
 var difficulty_converter = {"easy": [100, 20], "medium": [130, 25], "hard": [160, 45]}
 
 
-
 func _ready() -> void:
 	load_score()
 	update_difficulty()

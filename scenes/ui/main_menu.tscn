@@ -32,25 +32,35 @@ __meta__ = {
 }
 
 [node name="title" parent="." instance=ExtResource( 1 )]
+margin_top = 146.734
+margin_bottom = 350.734
 
 [node name="play_button" parent="." instance=ExtResource( 2 )]
 margin_left = 822.0
-margin_top = 608.0
+margin_top = 486.0
 margin_right = -788.0
-margin_bottom = -348.0
+margin_bottom = -470.0
 scene = "res://scenes/world.tscn"
+
+[node name="tutorial_button" parent="." instance=ExtResource( 2 )]
+margin_left = 822.0
+margin_top = 661.0
+margin_right = -788.0
+margin_bottom = -295.0
+text = "Tutorial"
+scene = "res://scenes/tutorial.tscn"
 
 [node name="quit_button" parent="." instance=ExtResource( 3 )]
 margin_left = 822.0
-margin_top = 808.0
+margin_top = 836.0
 margin_right = 1132.0
-margin_bottom = 932.0
+margin_bottom = 960.0
 
 [node name="music_button" type="CheckButton" parent="."]
 margin_left = 1500.0
-margin_top = 500.0
-margin_right = 1667.0
-margin_bottom = 564.0
+margin_top = 575.0
+margin_right = 1715.0
+margin_bottom = 639.0
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/normal = ExtResource( 6 )
@@ -68,10 +78,10 @@ __meta__ = {
 }
 
 [node name="controls_button" type="OptionButton" parent="."]
-margin_left = 299.056
-margin_top = 500.0
-margin_right = 466.056
-margin_bottom = 564.0
+margin_left = 380.0
+margin_top = 575.0
+margin_right = 595.0
+margin_bottom = 639.0
 theme = ExtResource( 10 )
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
@@ -86,8 +96,8 @@ __meta__ = {
 }
 
 [node name="controls_label" type="Label" parent="controls_button"]
-margin_left = -190.0
-margin_right = -10.0
+margin_left = -275.0
+margin_right = -60.0
 margin_bottom = 64.0
 custom_styles/normal = ExtResource( 6 )
 custom_fonts/font = ExtResource( 5 )
@@ -95,10 +105,10 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Controls: "
 
 [node name="difficulty_button" type="OptionButton" parent="."]
-margin_left = 300.0
-margin_top = 599.056
-margin_right = 467.0
-margin_bottom = 663.056
+margin_left = 380.0
+margin_top = 700.0
+margin_right = 595.0
+margin_bottom = 764.0
 theme = ExtResource( 10 )
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
@@ -113,13 +123,16 @@ __meta__ = {
 }
 
 [node name="difficulty_label" type="Label" parent="difficulty_button"]
-margin_left = -190.0
-margin_right = -10.0
+margin_left = -275.0
+margin_right = -60.0
 margin_bottom = 64.0
 custom_styles/normal = ExtResource( 6 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Difficulty:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="toggled" from="music_button" to="music_button" method="_on_music_button_toggled"]
 [connection signal="item_selected" from="controls_button" to="controls_button" method="_on_controls_button_item_selected"]
 [connection signal="item_selected" from="difficulty_button" to="difficulty_button" method="_on_difficulty_button_item_selected"]

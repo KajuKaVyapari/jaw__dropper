@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://resources/fonts/score_hud.tres" type="DynamicFont" id=1]
+[ext_resource path="res://textures/background.tres" type="Texture" id=2]
+[ext_resource path="res://scenes/ui/title_label.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/base_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://textures/logo_render.png" type="Texture" id=5]
+[ext_resource path="res://textures/tree_branch.png" type="Texture" id=6]
+[ext_resource path="res://textures/apple.png" type="Texture" id=7]
+
+[node name="tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.66968
+margin_right = -2.66968
+texture = ExtResource( 2 )
+expand = true
+
+[node name="title" parent="." instance=ExtResource( 3 )]
+margin_left = 750.0
+margin_top = 50.0
+margin_right = 1122.0
+margin_bottom = 254.0
+text = "Tutorial"
+
+[node name="mouth" type="TextureRect" parent="."]
+margin_left = 1494.0
+margin_top = 276.0
+margin_right = 1704.0
+margin_bottom = 486.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="apple" type="TextureRect" parent="."]
+margin_left = 86.8717
+margin_top = 268.782
+margin_right = 320.872
+margin_bottom = 502.782
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tree_branch" type="TextureRect" parent="."]
+margin_left = -25.7755
+margin_top = 650.337
+margin_right = 968.224
+margin_bottom = 1209.34
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tutorial" type="RichTextLabel" parent="."]
+margin_left = 359.903
+margin_top = 354.0
+margin_right = 1518.9
+margin_bottom = 914.0
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0.188235, 0.741176, 0.921569, 1 )
+custom_colors/selection_color = Color( 0.188235, 0.741176, 0.921569, 1 )
+custom_colors/font_color_selected = Color( 0.188235, 0.741176, 0.921569, 1 )
+custom_colors/font_color_shadow = Color( 0.188235, 0.741176, 0.921569, 1 )
+bbcode_enabled = true
+bbcode_text = "You are a hungry jaw.
+Eat food.
+Avoid poisonous mushrooms.
+Use WASD, Arrow Keys, or Mouse to move."
+text = "You are a hungry jaw.
+Eat food.
+Avoid poisonous mushrooms.
+Use WASD, Arrow Keys, or Mouse to move."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="return_button" parent="." instance=ExtResource( 4 )]
+margin_left = 1519.81
+margin_top = 922.664
+margin_right = -90.1866
+margin_bottom = -33.3363
+text = "Return"
+scene = "res://scenes/ui/main_menu.tscn"

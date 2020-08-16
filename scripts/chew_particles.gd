@@ -2,7 +2,6 @@ extends Particles
 
 
 func _ready() -> void:
-	
 	emitting = true
 	transform.origin = get_parent().get_node("player").transform.origin
 

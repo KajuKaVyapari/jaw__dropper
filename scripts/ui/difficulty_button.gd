@@ -5,7 +5,7 @@ func _ready() -> void:
 	add_item("Easy")
 	add_item("Medium")
 	add_item("Hard")
-	
+
 	selected = global.difficulty_list.find(global.difficulty_type)
 
 

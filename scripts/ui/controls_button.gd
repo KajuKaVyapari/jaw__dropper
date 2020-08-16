@@ -2,10 +2,9 @@ extends OptionButton
 
 
 func _ready() -> void:
-	
 	add_item("Keyboard")
 	add_item("Mouse")
-	
+
 	selected = global.control_list.find(global.control_type)
 
 

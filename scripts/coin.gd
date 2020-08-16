@@ -1,6 +1,5 @@
 extends KinematicBody
 
-
 onready var chew_particles = preload("res://scenes/chew_particles.tscn")
 
 var speed = global.speed

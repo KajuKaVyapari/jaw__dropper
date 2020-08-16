@@ -156,10 +156,10 @@ __meta__ = {
 }
 
 [node name="highscore" type="Label" parent="ui"]
-margin_left = 1400.0
+margin_left = 1300.0
 margin_top = 10.0
-margin_right = 1797.0
-margin_bottom = 86.0
+margin_right = 1830.0
+margin_bottom = 111.0
 custom_styles/normal = ExtResource( 6 )
 custom_fonts/font = ExtResource( 8 )
 text = "Highscore: 0"
