@@ -78,11 +78,13 @@ bbcode_text = "You are a hungry jaw.
 Eat fruits.
 Avoid junk food.
 Avoid poisonous mushrooms.
+Avoid the lava wall.
 Use WASD, Arrow Keys, or Mouse to move."
 text = "You are a hungry jaw.
 Eat fruits.
 Avoid junk food.
 Avoid poisonous mushrooms.
+Avoid the lava wall.
 Use WASD, Arrow Keys, or Mouse to move."
 __meta__ = {
 "_edit_use_anchors_": false

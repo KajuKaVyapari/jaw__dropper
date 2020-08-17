@@ -28,6 +28,8 @@ func _physics_process(delta: float) -> void:
 				direction += Vector3.RIGHT
 			if Input.is_action_pressed("ui_left"):
 				direction += Vector3.LEFT
+		if global.control_type == "Mobile Gyroscope":
+			direction = Input.get_gyroscope().normalized()
 		if Input.is_action_just_pressed("ui_cancel"):
 			get_parent().get_node("pause_manager").pause_game()
 
@@ -40,3 +42,8 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and global.control_type == "mouse":
 		direction = Vector3(event.get_relative().x, 0, event.get_relative().y).normalized()
+
+
+func _on_player_area_body_entered(body: Node) -> void:
+	if body.name == "dropper_body":
+		global.lose_game()
