@@ -28,8 +28,8 @@ func _physics_process(delta: float) -> void:
 				direction += Vector3.RIGHT
 			if Input.is_action_pressed("ui_left"):
 				direction += Vector3.LEFT
-		if global.control_type == "Mobile Gyroscope":
-			direction = Input.get_gyroscope().normalized()
+		if global.control_type == "mobile":
+			direction = Input.get_gyroscope()
 		if Input.is_action_just_pressed("ui_cancel"):
 			get_parent().get_node("pause_manager").pause_game()
 

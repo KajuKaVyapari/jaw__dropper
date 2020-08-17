@@ -15,7 +15,7 @@ var highscore = 0 setget set_highscore, get_highscore
 # Settings
 var music = true setget set_music, get_music
 
-var control_list = ["keyboard", "mouse"]
+var control_list = ["keyboard", "mouse", "mobile"]
 var control_type = control_list[0]
 
 var difficulty_list = ["easy", "medium", "hard"]
