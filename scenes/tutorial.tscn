@@ -75,11 +75,13 @@ custom_colors/font_color_selected = Color( 0.188235, 0.741176, 0.921569, 1 )
 custom_colors/font_color_shadow = Color( 0.188235, 0.741176, 0.921569, 1 )
 bbcode_enabled = true
 bbcode_text = "You are a hungry jaw.
-Eat food.
+Eat fruits.
+Avoid junk food.
 Avoid poisonous mushrooms.
 Use WASD, Arrow Keys, or Mouse to move."
 text = "You are a hungry jaw.
-Eat food.
+Eat fruits.
+Avoid junk food.
 Avoid poisonous mushrooms.
 Use WASD, Arrow Keys, or Mouse to move."
 __meta__ = {

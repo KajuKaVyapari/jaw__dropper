@@ -1,6 +1,6 @@
 extends Spatial
 
-var foods = [preload("res://scenes/burger.tscn"), preload("res://scenes/apple.tscn")]
+var foods = [preload("res://scenes/apple.tscn"), preload("res://scenes/banana.tscn")]
 
 
 func _ready() -> void:

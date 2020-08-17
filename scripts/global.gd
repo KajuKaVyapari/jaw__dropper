@@ -7,6 +7,7 @@ var spawners = 0
 var spawners_instances = []
 var spawners_iter = 0
 var coins = 0
+var poisons = 0
 
 var score_file = "user://highscore.txt"
 var highscore = 0 setget set_highscore, get_highscore

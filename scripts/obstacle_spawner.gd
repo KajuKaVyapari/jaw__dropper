@@ -26,7 +26,7 @@ func _on_obstacle_timer_timeout() -> void:
 
 
 func _on_self_spawn_timer_timeout() -> void:
-	if global.spawners < 8:
+	if global.spawners < 4:
 		global.spawners_instances.push_back(spawner.instance())
 		global.spawners_instances[global.spawners_iter].get_node("obstacle_timer").wait_time += clamp(
 			randi() % 3 - randi() % 6, -3, 3

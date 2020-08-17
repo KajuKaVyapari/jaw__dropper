@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/obstacle_spawner.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://resources/materials/ground.material" type="Material" id=10]
 [ext_resource path="res://scenes/ui/quit_button.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/ui/retry_button.gd" type="Script" id=12]
+[ext_resource path="res://scenes/poison_spawner.tscn" type="PackedScene" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.941176, 0.890196, 0.623529, 1 )
@@ -114,9 +115,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="dropper"]
+[node name="dropper_body" type="StaticBody" parent="dropper"]
 
-[node name="CollisionShape" type="CollisionShape" parent="dropper/StaticBody"]
+[node name="dropper_collider" type="CollisionShape" parent="dropper/dropper_body"]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 4 )
 
@@ -135,6 +136,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -65, 0 )
 
 [node name="coin_spawner" parent="coin_spawners" instance=ExtResource( 3 )]
+
+[node name="poision_spawners" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -65, 0 )
+
+[node name="poision_spawner" parent="poision_spawners" instance=ExtResource( 13 )]
 
 [node name="ui" type="Control" parent="."]
 margin_right = 40.0
