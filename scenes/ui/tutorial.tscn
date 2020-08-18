@@ -81,7 +81,8 @@ Avoid junk food.
 Avoid poisonous mushrooms.
 Avoid the lava wall.
 Use WASD or Arrow Keys to move.
-Press X to use slow motion."
+Press X to use slow motion.
+Press Q to pause the game."
 text = "You are a hungry jaw.
 Do not let your hunger bar run out.
 Eat fruits.
@@ -89,7 +90,8 @@ Avoid junk food.
 Avoid poisonous mushrooms.
 Avoid the lava wall.
 Use WASD or Arrow Keys to move.
-Press X to use slow motion."
+Press X to use slow motion.
+Press Q to pause the game."
 __meta__ = {
 "_edit_use_anchors_": false
 }
