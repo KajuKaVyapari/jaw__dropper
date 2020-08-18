@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_coin_area_body_entered(body: Node) -> void:
 	if body.name == "player":
+		body.hunger = 8
 		body.get_node("chew_effect").playing = true
 		global.score += 1
 		body.get_node("player_animator").play("rotate")
