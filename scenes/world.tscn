@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/obstacle_spawner.tscn" type="PackedScene" id=2]
@@ -15,6 +15,13 @@
 [ext_resource path="res://scenes/poison_spawner.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scripts/hunger.gd" type="Script" id=14]
 [ext_resource path="res://scripts/slowmo.gd" type="Script" id=15]
+[ext_resource path="res://sound/slowmo_effect.wav" type="AudioStream" id=16]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.0156863, 0.556863, 0.407843, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.470588, 0.921569, 0.701961, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.941176, 0.890196, 0.623529, 1 )
@@ -65,13 +72,93 @@ height = 0.5
 radial_segments = 16
 rings = 8
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.0156863, 0.556863, 0.407843, 1 )
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0.470588, 0.921569, 0.701961, 1 )
-
 [node name="world" type="Spatial"]
+
+[node name="ui" type="Node" parent="."]
+
+[node name="score" type="Label" parent="ui"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 271.0
+margin_bottom = 86.0
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 8 )
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="highscore" type="Label" parent="ui"]
+margin_left = 1300.0
+margin_top = 10.0
+margin_right = 1830.0
+margin_bottom = 111.0
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 8 )
+text = "Highscore: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hunger" type="ProgressBar" parent="ui"]
+margin_left = 850.0
+margin_top = 969.0
+margin_right = 1275.0
+margin_bottom = 1078.0
+custom_styles/fg = SubResource( 9 )
+custom_styles/bg = SubResource( 10 )
+max_value = 8.0
+percent_visible = false
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hunger_label" type="Label" parent="ui"]
+margin_left = 450.0
+margin_top = 969.0
+margin_right = 765.0
+margin_bottom = 1070.0
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 8 )
+text = "Hunger:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slowmo" type="ProgressBar" parent="ui"]
+margin_left = 811.859
+margin_top = 10.0
+margin_right = 1236.86
+margin_bottom = 119.0
+custom_styles/fg = SubResource( 9 )
+custom_styles/bg = SubResource( 10 )
+max_value = 2.0
+value = 2.0
+percent_visible = false
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="Timer" parent="ui/slowmo"]
+wait_time = 2.0
+one_shot = true
+
+[node name="slowmo_audio" type="AudioStreamPlayer" parent="ui/slowmo"]
+stream = ExtResource( 16 )
+
+[node name="slowmo_label" type="Label" parent="ui"]
+margin_left = 412.0
+margin_top = 10.0
+margin_right = 756.0
+margin_bottom = 111.0
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 8 )
+text = "SlowMo:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="pause_manager" type="Spatial" parent="."]
 pause_mode = 2
@@ -181,89 +268,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -65, 0 )
 [node name="poison_spawner" parent="poison_spawners" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0463171, 69.9584, 0 )
 
-[node name="ui" type="Node" parent="."]
-
-[node name="score" type="Label" parent="ui"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 271.0
-margin_bottom = 86.0
-custom_styles/normal = ExtResource( 6 )
-custom_fonts/font = ExtResource( 8 )
-text = "Score: 0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="highscore" type="Label" parent="ui"]
-margin_left = 1300.0
-margin_top = 10.0
-margin_right = 1830.0
-margin_bottom = 111.0
-custom_styles/normal = ExtResource( 6 )
-custom_fonts/font = ExtResource( 8 )
-text = "Highscore: 0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="hunger" type="ProgressBar" parent="ui"]
-margin_left = 850.0
-margin_top = 969.0
-margin_right = 1275.0
-margin_bottom = 1078.0
-custom_styles/fg = SubResource( 9 )
-custom_styles/bg = SubResource( 10 )
-max_value = 8.0
-percent_visible = false
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="hunger_label" type="Label" parent="ui"]
-margin_left = 450.0
-margin_top = 969.0
-margin_right = 765.0
-margin_bottom = 1070.0
-custom_styles/normal = ExtResource( 6 )
-custom_fonts/font = ExtResource( 8 )
-text = "Hunger:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="slowmo" type="ProgressBar" parent="ui"]
-margin_left = 811.859
-margin_top = 10.0
-margin_right = 1236.86
-margin_bottom = 119.0
-custom_styles/fg = SubResource( 9 )
-custom_styles/bg = SubResource( 10 )
-max_value = 2.0
-value = 2.0
-percent_visible = false
-script = ExtResource( 15 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="timer" type="Timer" parent="ui/slowmo"]
-wait_time = 2.0
-one_shot = true
-
-[node name="slowmo_label" type="Label" parent="ui"]
-margin_left = 412.0
-margin_top = 10.0
-margin_right = 756.0
-margin_bottom = 111.0
-custom_styles/normal = ExtResource( 6 )
-custom_fonts/font = ExtResource( 8 )
-text = "SlowMo:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="light" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.6923, 0 )
 omni_range = 30.0
@@ -271,3 +275,4 @@ omni_range = 30.0
 [connection signal="pressed" from="pause_manager/resume_button" to="pause_manager" method="resume_game"]
 [connection signal="pressed" from="pause_manager/retry_button" to="pause_manager/retry_button" method="_on_retry_button_pressed"]
 [connection signal="pressed" from="pause_manager/menu_button" to="pause_manager" method="resume_game"]
+[connection signal="pressed" from="pause_manager/menu_button" to="ui/slowmo" method="stop_sound"]

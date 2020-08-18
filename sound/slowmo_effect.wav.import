@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/slowmo_effect.wav-44322b1dc697d0266907c09a665da443.sample"
+
+[deps]
+
+source_file="res://sound/slowmo_effect.wav"
+dest_files=[ "res://.import/slowmo_effect.wav-44322b1dc697d0266907c09a665da443.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

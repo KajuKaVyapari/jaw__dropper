@@ -42,7 +42,7 @@ margin_top = 600.0
 margin_right = -788.0
 margin_bottom = -356.0
 text = "Tutorial"
-scene = "res://scenes/tutorial.tscn"
+scene = "res://scenes/ui/tutorial.tscn"
 
 [node name="settings_button" parent="." instance=ExtResource( 2 )]
 margin_left = 822.0

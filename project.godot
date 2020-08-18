@@ -33,6 +33,12 @@ window/size/width=1920
 window/size/height=1080
 window/size/fullscreen=true
 
+[importer_defaults]
+
+image={
+
+}
+
 [input]
 
 ui_left={

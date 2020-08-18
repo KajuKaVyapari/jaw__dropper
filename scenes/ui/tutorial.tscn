@@ -75,17 +75,21 @@ custom_colors/font_color_selected = Color( 0.188235, 0.741176, 0.921569, 1 )
 custom_colors/font_color_shadow = Color( 0.188235, 0.741176, 0.921569, 1 )
 bbcode_enabled = true
 bbcode_text = "You are a hungry jaw.
+Do not let your hunger bar run out.
 Eat fruits.
 Avoid junk food.
 Avoid poisonous mushrooms.
 Avoid the lava wall.
-Use WASD, Arrow Keys, or Mouse to move."
+Use WASD or Arrow Keys to move.
+Press X to use slow motion."
 text = "You are a hungry jaw.
+Do not let your hunger bar run out.
 Eat fruits.
 Avoid junk food.
 Avoid poisonous mushrooms.
 Avoid the lava wall.
-Use WASD, Arrow Keys, or Mouse to move."
+Use WASD or Arrow Keys to move.
+Press X to use slow motion."
 __meta__ = {
 "_edit_use_anchors_": false
 }

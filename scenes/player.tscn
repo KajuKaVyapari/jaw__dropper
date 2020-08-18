@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/mouth.tscn" type="PackedScene" id=2]
@@ -9,6 +9,22 @@ radius = 1.47268
 
 [sub_resource type="SphereShape" id=2]
 radius = 1.67529
+
+[sub_resource type="Animation" id=6]
+resource_name = "light_effect"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("effect_light:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0 ]
+}
 
 [sub_resource type="Animation" id=3]
 length = 0.5
@@ -47,9 +63,10 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, -1 )
 
 [node name="upper_jaw" parent="mouth" index="0"]
-transform = Transform( 1, 0, 0, 0, 0.974374, 0.224934, 0, -0.224934, 0.974374, 0, 1.74836, 0 )
+transform = Transform( 1, 0, 0, 0, 0.995395, -0.0958544, 0, 0.0958544, 0.995395, 0, 1.74836, 0 )
 
 [node name="player_animator" type="AnimationPlayer" parent="."]
+anims/light_effect = SubResource( 6 )
 anims/rotate = SubResource( 3 )
 
 [node name="chew_effect" type="AudioStreamPlayer3D" parent="."]
@@ -72,6 +89,12 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 5.0
 
 [node name="hunger_timer" type="Timer" parent="."]
+
+[node name="effect_light" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44814, 0 )
+light_color = Color( 0.956863, 0.960784, 0.254902, 1 )
+light_energy = 0.0
+omni_range = 40.0
 [connection signal="body_entered" from="player_area" to="." method="_on_player_area_body_entered"]
 [connection signal="timeout" from="hunger_timer" to="." method="_on_hunger_timer_timeout"]
 

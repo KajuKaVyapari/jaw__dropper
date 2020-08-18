@@ -4,7 +4,7 @@ extends OptionButton
 func _ready() -> void:
 	add_item("Keyboard")
 	add_item("Mouse")
-	add_item("Mobile Gyroscope")
+#	add_item("Mobile Gyroscope")
 
 	selected = global.control_list.find(global.control_type)
 
