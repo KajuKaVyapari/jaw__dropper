@@ -9,5 +9,5 @@ func _ready() -> void:
 	selected = global.control_list.find(global.control_type)
 
 
-func _on_controls_button_item_selected(index: int) -> void:
+func _on_controls_button_item_selected(_index: int) -> void:
 	global.control_type = global.control_list[selected]
